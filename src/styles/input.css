@@ -1,0 +1,20 @@
+/* Fuente base del tema */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import "tailwindcss";
+
+/* Tema de Flowbite */
+@import "flowbite/src/themes/default";
+
+/* Plugin de Flowbite */
+@plugin "flowbite/plugin";
+
+/* Fuente de clases para Tailwind */
+@source "../node_modules/flowbite";
+
+/* Esta línea es la clave para que Tailwind detecte la clase .dark en el <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+#app {
+  font-family: 'Nunito', sans-serif;
+}
