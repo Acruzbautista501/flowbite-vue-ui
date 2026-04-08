@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AccordionView from '@/views/docs/AccordionView.vue'
 import AlertView from '@/views/docs/AlertView.vue'
+import AvatarView from '@/views/docs/AvatarView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +23,12 @@ const router = createRouter({
       name: 'alert',
       component: AlertView,
     },
+    {
+      path: '/docs/avatar',
+      name: 'avatar',
+      component: AvatarView,
+    },
+    //
 
     /* Placeholder routes */
     {
