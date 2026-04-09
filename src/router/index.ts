@@ -5,6 +5,7 @@ import AccordionView from '@/views/docs/AccordionView.vue'
 import AlertView from '@/views/docs/AlertView.vue'
 import AvatarView from '@/views/docs/AvatarView.vue'
 import BadgeView from '@/views/docs/BadgeView.vue'
+import BannerView from '@/views/docs/BannerView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -33,7 +34,12 @@ const router = createRouter({
       path: '/docs/badge',
       name: 'badge',
       component: BadgeView,
-    },    
+    },
+    {
+      path: '/docs/banner',
+      name: 'banner',
+      component: BannerView,
+    },           
     //
 
     /* Placeholder routes */

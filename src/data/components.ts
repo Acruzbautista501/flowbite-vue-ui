@@ -28,10 +28,10 @@ export const componentsList: ComponentCard[] = [
     route: '/docs/badge',
   },
   {
-    name: 'Migas de Pan',
-    description: 'Ayuda a los usuarios a navegar y conocer su ubicación dentro del sitio web.',
-    image: '/images/components/breadcrumbs.png',
-    route: '/docs/breadcrumbs',
+    name: 'Banner',
+    description: 'Muestra mensajes importantes, promociones, avisos o alertas destacadas dentro de la interfaz.',
+    image: '/images/components/banner.png',
+    route: '/docs/banner',
   },
   {
     name: 'Botón',
