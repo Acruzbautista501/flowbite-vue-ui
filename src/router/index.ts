@@ -6,6 +6,7 @@ import AlertView from '@/views/docs/AlertView.vue'
 import AvatarView from '@/views/docs/AvatarView.vue'
 import BadgeView from '@/views/docs/BadgeView.vue'
 import BannerView from '@/views/docs/BannerView.vue'
+import BottomNavigationView from '@/views/docs/BottomNavigationView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -40,6 +41,11 @@ const router = createRouter({
       name: 'banner',
       component: BannerView,
     },           
+    {
+      path: '/docs/bottom-navigation',
+      name: 'bottom-navigation',
+      component: BottomNavigationView,
+    },      
     //
 
     /* Placeholder routes */

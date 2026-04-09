@@ -45,7 +45,6 @@ const emit = defineEmits<BannerEmits>()
 const {
   localVisible,
   closeBanner,
-  openBanner,
   containerClasses,
   contentClasses,
   positionClasses,
