@@ -65,14 +65,31 @@ const isHome = computed(() => route.path === '/')
 
           <button
             type="button"
-            class="inline-flex items-center gap-2 rounded-2xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+            role="switch"
+            :aria-checked="isDark"
+            aria-label="Alternar modo oscuro"
+            class="relative inline-flex h-7 w-14 shrink-0 cursor-pointer items-center rounded-full transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            :class="isDark ? 'bg-indigo-600' : 'bg-amber-400'"
             @click="toggleTheme"
           >
+            <!-- Sol (izquierda) — visible en modo oscuro -->
             <FontAwesomeIcon
-              :icon="isDark ? faSun : faMoon"
-              class="h-4 w-4"
+              :icon="faSun"
+              class="absolute left-1.5 h-3.5 w-3.5 text-white transition-opacity duration-300"
+              :class="isDark ? 'opacity-100' : 'opacity-0'"
             />
-            {{ isDark ? 'Modo claro' : 'Modo oscuro' }}
+            <!-- Luna (derecha) — visible en modo claro -->
+            <FontAwesomeIcon
+              :icon="faMoon"
+              class="absolute right-1.5 h-3.5 w-3.5 text-white transition-opacity duration-300"
+              :class="isDark ? 'opacity-0' : 'opacity-100'"
+            />
+            <!-- Círculo deslizante -->
+            <span
+              aria-hidden="true"
+              class="inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform duration-300"
+              :class="isDark ? 'translate-x-8' : 'translate-x-1'"
+            />
           </button>
         </div>
       </div>
