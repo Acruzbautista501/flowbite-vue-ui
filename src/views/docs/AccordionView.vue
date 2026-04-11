@@ -2,6 +2,17 @@
 import { ref } from 'vue'
 import BaseAccordion from '@/components/ui/accordion/BaseAccordion.vue'
 import type { AccordionItem } from '@/interfaces/ui/accordion/Accordion'
+import BaseCodeBlock from '@/components/ui/code/BaseCodeBlock.vue'
+
+import componentSrc from '@/components/ui/accordion/BaseAccordion.vue?raw'
+import composableSrc from '@/composables/ui/accordion/useAccordion.ts?raw'
+import interfaceSrc from '@/interfaces/ui/accordion/Accordion.ts?raw'
+
+const codeTabs = [
+  { label: 'Componente', filename: 'BaseAccordion.vue', code: componentSrc },
+  { label: 'Composable', filename: 'useAccordion.ts', code: composableSrc },
+  { label: 'Interface', filename: 'Accordion.ts', code: interfaceSrc },
+]
 
 const defaultItems = ref<AccordionItem[]>([
   {
@@ -240,6 +251,15 @@ const nestedChild = ref<AccordionItem[]>([
             </div>
           </template>
         </BaseAccordion>
+      </section>
+
+      <!-- Source Code -->
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Código fuente</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Copia los archivos que necesites para usar este componente en tu proyecto.
+        </p>
+        <BaseCodeBlock :tabs="codeTabs" />
       </section>
     </div>
   </div>

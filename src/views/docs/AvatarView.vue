@@ -1,6 +1,21 @@
 <script setup lang="ts">
 import BaseAvatar from '@/components/ui/avatar/BaseAvatar.vue'
 import BaseAvatarGroup from '@/components/ui/avatar/BaseAvatarGroup.vue'
+import BaseCodeBlock from '@/components/ui/code/BaseCodeBlock.vue'
+
+import avatarSrc from '@/components/ui/avatar/BaseAvatar.vue?raw'
+import avatarGroupSrc from '@/components/ui/avatar/BaseAvatarGroup.vue?raw'
+import useAvatarSrc from '@/composables/ui/avatar/useAvatar.ts?raw'
+import useAvatarGroupSrc from '@/composables/ui/avatar/useAvatarGroup.ts?raw'
+import avatarInterfaceSrc from '@/interfaces/ui/avatar/Avatar.ts?raw'
+
+const codeTabs = [
+  { label: 'BaseAvatar.vue', filename: 'BaseAvatar.vue', code: avatarSrc },
+  { label: 'BaseAvatarGroup.vue', filename: 'BaseAvatarGroup.vue', code: avatarGroupSrc },
+  { label: 'useAvatar.ts', filename: 'useAvatar.ts', code: useAvatarSrc },
+  { label: 'useAvatarGroup.ts', filename: 'useAvatarGroup.ts', code: useAvatarGroupSrc },
+  { label: 'Avatar.ts', filename: 'Avatar.ts', code: avatarInterfaceSrc },
+]
 
 const avatarUrl = 'https://flowbite.com/docs/images/people/profile-picture-5.jpg'
 const avatarUrl2 = 'https://flowbite.com/docs/images/people/profile-picture-2.jpg'
@@ -155,6 +170,15 @@ const avatarGroup = [
           <BaseAvatar :src="avatarUrl" size="xl" rounded="base" />
           <BaseAvatar :src="avatarUrl" size="2xl" rounded="base" />
         </div>
+      </section>
+
+      <!-- Source Code -->
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Código fuente</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Copia los archivos que necesites para usar este componente en tu proyecto.
+        </p>
+        <BaseCodeBlock :tabs="codeTabs" />
       </section>
     </div>
   </div>

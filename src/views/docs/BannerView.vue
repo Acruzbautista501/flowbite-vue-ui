@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import BaseBanner from '@/components/ui/banner/BaseBanner.vue'
+import BaseCodeBlock from '@/components/ui/code/BaseCodeBlock.vue'
+
+import componentSrc from '@/components/ui/banner/BaseBanner.vue?raw'
+import composableSrc from '@/composables/ui/banner/useBanner.ts?raw'
+import interfaceSrc from '@/interfaces/ui/banner/Banner.ts?raw'
+
+const codeTabs = [
+  { label: 'Componente', filename: 'BaseBanner.vue', code: componentSrc },
+  { label: 'Composable', filename: 'useBanner.ts', code: composableSrc },
+  { label: 'Interface', filename: 'Banner.ts', code: interfaceSrc },
+]
 
 const showDefaultBanner = ref(true)
 const showBottomBanner = ref(true)
@@ -260,6 +271,15 @@ const newsletterEmail = ref('')
             </button>
           </template>
         </BaseBanner>
+      </section>
+
+      <!-- Source Code -->
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Código fuente</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Copia los archivos que necesites para usar este componente en tu proyecto.
+        </p>
+        <BaseCodeBlock :tabs="codeTabs" />
       </section>
     </div>
   </div>

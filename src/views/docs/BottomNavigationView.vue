@@ -16,6 +16,17 @@ import {
 
 import BaseBottomNavigation from '@/components/ui/bottom-navigation/BaseBottomNavigation.vue'
 import type { BottomNavigationItem } from '@/interfaces/ui/bottom-navigation/BottomNavigation'
+import BaseCodeBlock from '@/components/ui/code/BaseCodeBlock.vue'
+
+import componentSrc from '@/components/ui/bottom-navigation/BaseBottomNavigation.vue?raw'
+import composableSrc from '@/composables/ui/bottom-navigation/useBottomNavigation.ts?raw'
+import interfaceSrc from '@/interfaces/ui/bottom-navigation/BottomNavigation.ts?raw'
+
+const codeTabs = [
+  { label: 'Componente', filename: 'BaseBottomNavigation.vue', code: componentSrc },
+  { label: 'Composable', filename: 'useBottomNavigation.ts', code: composableSrc },
+  { label: 'Interface', filename: 'BottomNavigation.ts', code: interfaceSrc },
+]
 
 const activeDefault = ref<string | number>('home')
 const activeBordered = ref<string | number>('wallet')
@@ -205,6 +216,15 @@ function handleCenterAction() {
           />
         </div>
       </div>
+    </div>
+
+    <!-- Source Code -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold">Código fuente</h2>
+      <p class="text-gray-600 dark:text-gray-400 text-sm">
+        Copia los archivos que necesites para usar este componente en tu proyecto.
+      </p>
+      <BaseCodeBlock :tabs="codeTabs" />
     </div>
   </section>
 </template>
